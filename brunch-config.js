@@ -21,8 +21,8 @@ exports.config = {
     },
     stylesheets: {
       joinTo: {
-        "css/app.css": /^app/,
-        "css/vendor.css": /^node_modules/
+        'css/app.css': /^(web\/static\/css)/,
+        'css/vendor.css': /^(?!web\/static\/assets)/
       },
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
@@ -76,6 +76,10 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    styles: {
+      'ace-css': ['css/ace.css'],
+      'font-awesome': ['css/font-awesome.css']
+    }
   }
 };
