@@ -20,7 +20,10 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css",
+      joinTo: {
+        "css/app.css": /^app/,
+        "css/vendor.css": /^node_modules/
+      },
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
       }
@@ -60,6 +63,9 @@ exports.config = {
       elmFolder: 'web/elm',
       mainModules: ['Main.elm'],
       outputFolder: '../static/js',
+    },
+    copycat:{
+      "fonts": ["node_modules/font-awesome/fonts"]
     }
   },
 
