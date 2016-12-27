@@ -2,11 +2,11 @@ defmodule PhoenixElmRpg.PlayerView do
   use PhoenixElmRpg.Web, :view
 
   def render("index.json", %{players: players}) do
-    %{players: render_many(players, PhoenixElmRpg.PlayerView, "player.json")}
+    render_many(players, PhoenixElmRpg.PlayerView, "player.json")
   end
 
   def render("show.json", %{player: player}) do
-    %{players: render_one(player, PhoenixElmRpg.PlayerView, "player.json")}
+    render_one(player, PhoenixElmRpg.PlayerView, "player.json")
   end
 
   def render("player.json", %{player: player}) do
